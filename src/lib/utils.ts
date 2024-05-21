@@ -8,6 +8,6 @@ import { twMerge } from "tailwind-merge";
  * @returns { string } - Merged Tailwind CSS classnames
  * @example cn("text-red-500", "text-center", "text-cyan-500") // => "text-center text-cyan-500"
  */
-export function cn(...inputs: ClassValue[]) {
+export function cn(...inputs: ClassValue[]): string {
   return twMerge(clsx(inputs));
 }
