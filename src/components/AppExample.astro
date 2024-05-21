@@ -17,11 +17,11 @@ const { imagePath, title, packageName } = Astro.props;
     <img class="object-contain" src={imagePath} alt={title} loading="lazy" />
   </div>
   <div
-    class="md:mt-6 grid sm:grid-cols-2 gap-4 sm:gap-12 max-w-3xl w-full mx-auto"
+    class="md:mt-6 grid sm:grid-cols-2 gap-4 md:gap-16 max-w-3xl w-full mx-auto"
   >
     <div>
       <h2
-        class="text-center md:text-left text-gray-950 dark:text-white text-xl md:text-2xl font-semibold"
+        class="text-center md:text-right text-gray-950 dark:text-white text-xl md:text-2xl font-semibold"
       >
         {title}
       </h2>
