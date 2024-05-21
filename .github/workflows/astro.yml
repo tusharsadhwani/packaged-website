@@ -37,7 +37,7 @@ jobs:
         run: npm run build
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ env.BUILD_PATH }}/dist
+          path: ./dist
 
   deploy:
     environment:
