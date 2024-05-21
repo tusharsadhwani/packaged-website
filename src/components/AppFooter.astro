@@ -1,0 +1,74 @@
+---
+import BrandLogo from "./BrandLogo.astro";
+import Container from "./Container.astro";
+
+type Link = {
+  title: string;
+  url: string;
+};
+
+const creatorLinks = [
+  { title: "GitHub", url: "https://github.com/tusharsadhwani" },
+  { title: "Blog", url: "https://tushar.lol" },
+  { title: "Twitter", url: "https://twitter.com/tusharisanerd" },
+];
+
+const productLinks = [
+  { title: "GitHub", url: "https://github.com/tusharsadhwani/packaged" },
+  {
+    title: "License",
+    url: "https://github.com/tusharsadhwani/packaged/tree/main/LICENSE",
+  },
+  { title: "PyPI", url: "#" },
+];
+---
+
+<footer class="pb-6 sm:pb-12">
+  <Container>
+    <div
+      class="px-6 py-3 rounded-[--card-border-radius] bg-gray-50 dark:bg-[--card-dark-bg] sm:px-12 sm:py-6"
+    >
+      <div class="flex justify-between items-end gap-4">
+        <div>
+          <p class="text-gray-950 dark:text-white font-medium">
+            Created by Tushar Sadhwani
+          </p>
+          <ul class="mt-6 space-y-2">
+            {
+              creatorLinks.map((link: Link) => (
+                <li>
+                  <a
+                    href={link.url}
+                    class="text-gray-600 dark:text-gray-400 transition hover:text-primary-600 dark:hover:text-primary-400"
+                  >
+                    {link.title}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+        <div>
+          <BrandLogo class="text-3xl md:text-5xl" />
+          <div class="mt-6 text-right">
+            <span class="text-gray-950 dark:text-white font-medium">Links</span>
+            <ul class="mt-6 space-y-2">
+              {
+                productLinks.map((link: Link) => (
+                  <li>
+                    <a
+                      href={link.url}
+                      class="text-gray-600 dark:text-gray-400 transition hover:text-primary-600 dark:hover:text-primary-400"
+                    >
+                      {link.title}
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Container>
+</footer>

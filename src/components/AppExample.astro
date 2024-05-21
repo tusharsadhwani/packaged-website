@@ -1,0 +1,65 @@
+---
+import Container from "./Container.astro";
+
+export interface Props {
+  imagePath: string;
+  title: string;
+  packageName: string;
+}
+
+const { imagePath, title, packageName } = Astro.props;
+---
+
+<Container>
+  <div
+    class="lg:p-[--card-padding] w-full max-h-[40rem] lg:rounded-[--card-border-radius] lg:bg-gray-100 lg:dark:bg-[--card-dark-bg] flex"
+  >
+    <img class="object-contain" src={imagePath} alt={title} loading="lazy" />
+  </div>
+  <div
+    class="md:mt-6 grid sm:grid-cols-2 gap-4 sm:gap-12 max-w-3xl w-full mx-auto"
+  >
+    <div>
+      <h2
+        class="text-center md:text-left text-gray-950 dark:text-white text-xl md:text-2xl font-semibold"
+      >
+        {title}
+      </h2>
+    </div>
+    <div class="space-y-3 text-gray-600 dark:text-gray-400">
+      <slot />
+    </div>
+  </div>
+  <div class="flex justify-center py-8 gap-4 md:gap-16">
+    <div>
+      <p class="font-medium">Download for macOS</p>
+      <p>
+        <a
+          class="text-primary-600 dark:text-primary-400"
+          href={`https://github.com/tusharsadhwani/packaged/releases/latest/download/${packageName}-aarch64-darwin.bin`}
+        >
+          Apple silicon
+        </a>
+      </p>
+      <p>
+        <a
+          class="text-primary-600 dark:text-primary-400"
+          href={`https://github.com/tusharsadhwani/packaged/releases/latest/download/${packageName}-x86_64-darwin.bin`}
+        >
+          Intel 64bit
+        </a>
+      </p>
+    </div>
+    <div>
+      <p class="font-medium">Download for Linux</p>
+      <p>
+        <a
+          class="text-primary-600 dark:text-primary-400"
+          href={`https://github.com/tusharsadhwani/packaged/releases/latest/download/${packageName}-x86_64-linux.bin`}
+        >
+          x86 64bit
+        </a>
+      </p>
+    </div>
+  </div>
+</Container>

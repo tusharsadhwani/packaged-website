@@ -1,0 +1,13 @@
+---
+export interface Props {
+  class?: string;
+}
+
+const { class: className = "text-2xl" } = Astro.props;
+---
+
+<a href="/" aria-label="tailus logo">
+  <span class={className} style={{ fontFamily: "Jaro, sans-serif" }}
+    >packaged</span
+  >
+</a>

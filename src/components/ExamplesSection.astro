@@ -1,0 +1,60 @@
+---
+import AppExample from "./AppExample.astro";
+---
+
+<section id="examples" class="flex flex-col gap-12">
+  <div class="flex justify-center m-12">
+    <h2
+      class="text-gray-900 dark:text-white font-bold text-3xl sm:text-3xl md:text-5xl"
+    >
+      Examples
+    </h2>
+  </div>
+  <AppExample
+    title="Mandelbrot Visualizer"
+    imagePath="/mandelbrot.png"
+    packageName="mandelbrot"
+  >
+    <p>
+      An interactive mandelbrot set GUI, with Python 3.12 and the following
+      dependencies:
+    </p>
+    <ul>
+      <li><code>&#9900; matplotlib</code></li>
+      <li><code>&#9900; numba</code></li>
+      <li><code>&#9900; llvmlite</code></li>
+      <li><code>&#9900; pillow</code></li>
+    </ul>
+  </AppExample>
+  <AppExample
+    title="Aliens (pygame)"
+    imagePath="/aliens.png"
+    packageName="aliens"
+  >
+    <code>pygame</code> ships with various games in its examples folder, one of them
+    being <code>aliens</code>.
+  </AppExample>
+  <AppExample
+    title="Textual (TUI app)"
+    imagePath="/textual.png"
+    packageName="textual"
+  >
+    Running <code>python -m textual</code> launches this beautiful TUI demo of one
+    of the best terminal user interfaces I've ever seen.
+  </AppExample>
+  <AppExample
+    title="Minesweeper"
+    imagePath="/minesweeper.png"
+    packageName="minesweeper"
+  >
+    A portable Minesweeper build, for you to take wherever you need.
+  </AppExample>
+  <AppExample
+    title="Portable IPython interpreter"
+    imagePath="/ipython.png"
+    packageName="ipython"
+  >
+    Just a showcase for CLI applications. Pretty much anything can be packaged
+    like this.
+  </AppExample>
+</section>

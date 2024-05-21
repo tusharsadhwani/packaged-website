@@ -1,0 +1,14 @@
+---
+import HeroSection from "../components/HeroSection.astro";
+import Layout from "../layouts/Layout.astro";
+import CallToAction from "../components/CallToAction.astro";
+import ExamplesSection from "@components/ExamplesSection.astro";
+---
+
+<Layout title="Welcome to Astrolus.">
+  <main class="space-y-16 sm:space-y-28 lg:space-y-32 pb-40 overflow-clip">
+    <HeroSection />
+    <ExamplesSection />
+    <CallToAction />
+  </main>
+</Layout>
